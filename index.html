@@ -4,9 +4,7 @@
      <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
      <script defer src="https://pyscript.net/latest/pyscript.js"></script>
           <py-env>
-   - pandas
-   - jinja2
-</py-env>
+          </py-env>
 
   <title>Poolsky</title>
   <body style="background-color:RoyalBlue;">
@@ -43,33 +41,8 @@
 </style>
 </head>
     
-<h1>Poolsky A Hoksy Community Tool by Ultros</h1>
+<h1>Poolsky A Hoksy Community Tool</h1>
     
-<p>Daily Pool Stats for the Rug Pools</p>
-<p>This means, that I update the data below daily on how many cashgrabs, gnomeskies,<br>
-special gnomeskies and shittis with cashgrabs are in each Pool.<br>
-
-I also include how man are matched in total and in percentage<br>
-  
-The Value "Weight" is a depiciton of the total NFTs per Pool.<br>
-If there are more NFTs it means u get less Hosky per NFT!<br>
-So u would wanna go to a Pool with less weight!<br>
-The Pools are sorted by weight in ascending order. <br>
-<br>  
-I will add a calculator for the best Pool for your Wallet for Ada and for NFTs soonish...<br>
-Both table and graph will be interactive too I guess.<br>
-Until then u have to do it manually.<br>
-<br>  
-U can just calculate using your own weight with Sayos's fancy bot<br>
-Then u just need to put the values into this formula:<br>
-<br>
-your weight = cashg + matched + ((gnome+matched_2)*15)+(cgs_with_shittis * 0.69) + (gnome_special * 5)<br>
-<br>  
-your share of the total hosky rewards for nfts per Epoch calculated easily:<br>
-your share = (your weight / your pools weight) x 11.5B<br>
-<br>  
-Mind u that all provided numbers are approximations!<br></p>
-<br>
 <p>last update on: 11/04/2022 </p>
 
 <p>Stake to SEA Idiots!</p>
@@ -125,14 +98,14 @@ Mind u that all provided numbers are approximations!<br></p>
 <py-script>
 import pandas as pd
 import json
-from pyodide.http import pyfetch
-import asyncio
+from pyodide.http import pyfetch, FetchResponse
+from typing import Optional, Any
 
 async def fetch():
     response = await pyfetch(url="https://raw.githubusercontent.com/ultrAKoAs/ultrakoas.github.io/main/src/pool_stats_latest.json", method="GET")
-    return response.json()
+    return response
 
-output = fetch()
+output = async def fetch()
 m_output = output
 Frame = pd.DataFrame(m_output).sort_values(by="weight")
 

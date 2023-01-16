@@ -116,11 +116,11 @@ Mind u that all provided numbers are approximations!<br></p>
 </style>
 <div class="vertically">
 <div class="inner">
-<img src="https://raw.githubusercontent.com/ultros123/ultros123.github.io/main/poolsky/src/pistachiosky_1.png" alt="Pistachiosky">
+<img src="https://raw.githubusercontent.com/ultrAKoAs/ultrakoas.github.io/main/src/pistachiosky_1.png" alt="Pistachiosky">
 </div>
 </div>    
 
-<img src="https://raw.githubusercontent.com/ultros123/ultros123.github.io/main/poolsky/src/graph.png" alt="pool_stats_graph" border="0">
+<img src="https://raw.githubusercontent.com/ultrAKoAs/ultrakoas.github.io/main/src/graph.png" alt="pool_stats_graph" border="0">
 <div id="chart1"></div>
 <py-script>
 import pandas as pd
@@ -128,7 +128,7 @@ import json
 from pyodide.http import pyfetch
 import asyncio
 
-response = await pyfetch(url="https://raw.githubusercontent.com/ultros123/ultros123.github.io/main/poolsky/src/pool_stats_latest.json", method="GET")
+response = await pyfetch(url="https://raw.githubusercontent.com/ultrAKoAs/ultrakoas.github.io/main/src/pool_stats_latest.json", method="GET")
 output = await response.json()
 m_output = output
 Frame = pd.DataFrame(m_output).sort_values(by="weight")

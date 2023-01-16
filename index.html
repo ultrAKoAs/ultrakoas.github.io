@@ -128,8 +128,11 @@ import json
 from pyodide.http import pyfetch
 import asyncio
 
-response = asyncio.ensure_future() pyfetch(url="https://raw.githubusercontent.com/ultrAKoAs/ultrakoas.github.io/main/src/pool_stats_latest.json", method="GET")
-output = asyncio.ensure_future() response.json()
+async def fetch():
+    response = await pyfetch(url="https://raw.githubusercontent.com/ultrAKoAs/ultrakoas.github.io/main/src/pool_stats_latest.json", method="GET")
+    return response.json()
+
+output = fetch()
 m_output = output
 Frame = pd.DataFrame(m_output).sort_values(by="weight")
 
